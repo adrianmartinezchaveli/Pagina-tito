@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ca Na Margalida — Restaurante en Felanitx, Mallorca</title>
+  <meta name="description" content="Cocina mallorquina de mercado en el centro de Felanitx. Tradición local con técnica moderna. Reserva tu mesa.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <span class="preloader__text">Ca Na Margalida</span>
+  </div>
+
+  <!-- Navegación -->
+  <header class="nav" id="nav">
+    <a href="#inicio" class="nav__logo">Ca Na Margalida</a>
+    <nav class="nav__links" id="navLinks">
+      <a href="#nosotros">Nosotros</a>
+      <a href="#carta">Carta</a>
+      <a href="#galeria">Galería</a>
+      <a href="#contacto">Contacto</a>
+      <a href="https://restaurante.covermanager.com/ca-na-margalida/" target="_blank" rel="noopener" class="btn btn--small">Reservar</a>
+    </nav>
+    <button class="nav__burger" id="burger" aria-label="Abrir menú">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="inicio">
+    <div class="hero__media">
+      <img src="img/carrillera.jpg" alt="Carrillera de ternera rellena de foie sobre puré trufado" class="hero__img" id="heroImg">
+      <div class="hero__overlay"></div>
+    </div>
+    <div class="hero__content">
+      <p class="hero__eyebrow reveal">Felanitx · Mallorca</p>
+      <h1 class="hero__title">
+        <span class="line"><span>Cocina de</span></span>
+        <span class="line"><span>mercado con</span></span>
+        <span class="line"><span><em>alma mallorquina</em></span></span>
+      </h1>
+      <p class="hero__sub reveal">Tradición local, producto de temporada y técnica moderna en el corazón de Felanitx.</p>
+      <div class="hero__actions reveal">
+        <a href="https://restaurante.covermanager.com/ca-na-margalida/" target="_blank" rel="noopener" class="btn">Reservar mesa</a>
+        <a href="#carta" class="btn btn--ghost">Ver la carta</a>
+      </div>
+    </div>
+    <div class="hero__scroll">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- Cinta marquee -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Producto local · Cocina de mercado · Menú degustación · Tradición mallorquina · </span>
+      <span>Producto local · Cocina de mercado · Menú degustación · Tradición mallorquina · </span>
+    </div>
+  </div>
+
+  <!-- Nosotros -->
+  <section class="about section" id="nosotros">
+    <div class="about__grid">
+      <div class="about__text">
+        <p class="section__eyebrow reveal">Nosotros</p>
+        <h2 class="section__title reveal">Tradición local,<br><em>mirada actual</em></h2>
+        <p class="reveal">En el centro de Felanitx, Ca Na Margalida une la tradición mallorquina con la cocina de mercado en una propuesta refinada y acogedora. Producto de proximidad, técnica cuidada y un servicio cercano.</p>
+        <p class="reveal">Un espacio sin pretensiones, perfecto para comidas en grupo, cenas íntimas o celebraciones familiares.</p>
+        <div class="about__stats reveal">
+          <div class="stat">
+            <span class="stat__num" data-count="42">0</span><span class="stat__unit">€</span>
+            <span class="stat__label">Menú degustación</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num" data-count="100">0</span><span class="stat__unit">%</span>
+            <span class="stat__label">Producto de proximidad</span>
+          </div>
+        </div>
+      </div>
+      <div class="about__media reveal">
+        <figure class="frame">
+          <img src="img/interior.jpg" alt="Comedor del restaurante Ca Na Margalida">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Carta -->
+  <section class="menu section section--dark" id="carta">
+    <p class="section__eyebrow reveal">La carta</p>
+    <h2 class="section__title reveal">Platos que<br><em>cuentan la isla</em></h2>
+    <ul class="menu__list">
+      <li class="menu__item reveal">
+        <div>
+          <h3>Carrillera de ternera rellena de foie</h3>
+          <p>Sobre puré trufado y su jugo reducido</p>
+        </div>
+        <span class="menu__dots"></span>
+      </li>
+      <li class="menu__item reveal">
+        <div>
+          <h3>Cochinillo asado a baja temperatura</h3>
+          <p>Piel crujiente, carne melosa, cocción lenta</p>
+        </div>
+        <span class="menu__dots"></span>
+      </li>
+      <li class="menu__item reveal">
+        <div>
+          <h3>Lomo ibérico a la brasa</h3>
+          <p>Con verduras de temporada</p>
+        </div>
+        <span class="menu__dots"></span>
+      </li>
+      <li class="menu__item reveal">
+        <div>
+          <h3>Bacalao confitado</h3>
+          <p>Con patata machacada y aceite de la tierra</p>
+        </div>
+        <span class="menu__dots"></span>
+      </li>
+      <li class="menu__item reveal">
+        <div>
+          <h3>Frito mallorquín</h3>
+          <p>La receta de siempre, como en casa</p>
+        </div>
+        <span class="menu__dots"></span>
+      </li>
+    </ul>
+    <div class="menu__cta reveal">
+      <div class="menu__degustacion">
+        <h3>Menú degustación · 42€</h3>
+        <p>Un recorrido por los sabores tradicionales de Mallorca con toques creativos. Pan con espuma cremosa y aceitunas, frito mallorquín, bacalao, carrillera y postre.</p>
+        <a href="https://restaurante.covermanager.com/ca-na-margalida/" target="_blank" rel="noopener" class="btn btn--light">Reservar</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galería -->
+  <section class="gallery section" id="galeria">
+    <p class="section__eyebrow reveal">Galería</p>
+    <h2 class="section__title reveal">Para comer,<br><em>primero los ojos</em></h2>
+    <div class="gallery__grid">
+      <figure class="gallery__item gallery__item--tall reveal">
+        <img src="img/carrillera.jpg" alt="Plato de carrillera con foie" loading="lazy">
+        <figcaption>Carrillera con foie</figcaption>
+      </figure>
+      <figure class="gallery__item reveal">
+        <img src="img/cochinillo.jpg" alt="Cochinillo asado crujiente" loading="lazy">
+        <figcaption>Cochinillo a baja temperatura</figcaption>
+      </figure>
+      <figure class="gallery__item reveal">
+        <img src="img/marca.jpg" alt="Ilustración floral de Ca Na Margalida" loading="lazy">
+        <figcaption>Ca Na Margalida</figcaption>
+      </figure>
+      <figure class="gallery__item gallery__item--wide reveal">
+        <img src="img/interior.jpg" alt="Mesa preparada en el comedor" loading="lazy">
+        <figcaption>El comedor</figcaption>
+      </figure>
+    </div>
+    <p class="gallery__more reveal">
+      Más en Instagram → <a href="https://www.instagram.com/restaurantcanamargalida/" target="_blank" rel="noopener">@restaurantcanamargalida</a>
+    </p>
+  </section>
+
+  <!-- Contacto -->
+  <section class="contact section section--dark" id="contacto">
+    <div class="contact__grid">
+      <div class="reveal">
+        <p class="section__eyebrow">Contacto</p>
+        <h2 class="section__title">Te esperamos<br><em>en Felanitx</em></h2>
+        <a class="contact__phone" href="tel:+34613647944">+34 613 647 944</a>
+      </div>
+      <div class="contact__info">
+        <div class="contact__block reveal">
+          <h3>Dirección</h3>
+          <p>Passeig de n'Ernest Mestre, 28<br>07200 Felanitx, Illes Balears</p>
+          <a href="https://maps.google.com/?q=Passeig+de+n'Ernest+Mestre+28+Felanitx" target="_blank" rel="noopener">Cómo llegar ↗</a>
+        </div>
+        <div class="contact__block reveal">
+          <h3>Horario</h3>
+          <p>Martes a domingo<br>13:00 – 16:00 · 19:00 – 22:00<br><small>Jueves y sábado hasta las 22:30 · Lunes cerrado</small></p>
+        </div>
+        <div class="contact__block reveal">
+          <h3>Reservas</h3>
+          <p>Reserva online en un minuto o llámanos por teléfono.</p>
+          <a href="https://restaurante.covermanager.com/ca-na-margalida/" target="_blank" rel="noopener" class="btn btn--light">Reservar mesa</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p class="footer__name">Ca Na Margalida</p>
+    <div class="footer__links">
+      <a href="https://www.instagram.com/restaurantcanamargalida/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://restaurante.covermanager.com/ca-na-margalida/" target="_blank" rel="noopener">Reservas</a>
+      <a href="tel:+34613647944">+34 613 647 944</a>
+    </div>
+    <p class="footer__copy">© 2026 Restaurant Ca Na Margalida · Felanitx, Mallorca</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
