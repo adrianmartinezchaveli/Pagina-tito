@@ -8,21 +8,30 @@ Diseño minimalista y moderno, muy visual, con animaciones y sin dependencias: H
 ```
 index.html      Página única con todas las secciones
 css/styles.css  Estilos y animaciones
-js/main.js      Interacciones (reveal, parallax, menú móvil, contadores)
+js/main.js      Interacciones (slideshow, reveal, parallax, lightbox, cursor, contadores)
 img/            Fotos del restaurante
+docs/carta.pdf  Carta original (fuente de los precios)
 ```
 
 ## Secciones
 
-- **Hero** con foto a pantalla completa, título animado y parallax
-- **Nosotros** con contadores animados
-- **Carta** con platos destacados y menú degustación (42 €)
-- **Galería** con efecto hover
+- **Hero** con pase de fotos (crossfade), título animado, parallax y grano de película
+- **Nosotros** con contadores animados y revelado de imágenes en cortina
+- **Carta** completa desde el PDF oficial (entrantes y principales con precios) + menú degustación (42 €) + descarga del PDF
+- **Galería** con lightbox y efectos hover
 - **Contacto** con dirección, horario y enlace de reservas (CoverManager)
+
+Extras: barra de progreso de scroll, cursor personalizado en escritorio, marquee, respeta `prefers-reduced-motion`.
 
 ## Uso
 
-Abrir `index.html` en el navegador. No requiere build ni servidor.
+Abrir `index.html` directamente, o servir en el puerto 3000:
+
+```
+npx serve -l 3000 .
+```
+
+Web disponible en http://localhost:3000
 
 ## Datos del restaurante
 
