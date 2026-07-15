@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="img/logo.png">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -18,17 +19,21 @@
   <!-- Cursor personalizado (solo escritorio) -->
   <div class="cursor" id="cursor"></div>
 
-  <!-- Preloader -->
+  <!-- Preloader: logo 2s -->
   <div class="preloader" id="preloader">
     <div class="preloader__inner">
-      <span class="preloader__text">Ca Na Margalida</span>
-      <span class="preloader__sub">Felanitx · Mallorca</span>
+      <span class="preloader__halo" aria-hidden="true"></span>
+      <img src="img/logo.png" alt="Restaurant Ca Na Margalida" class="preloader__logo">
+      <span class="preloader__line" aria-hidden="true"></span>
     </div>
   </div>
 
   <!-- Navegación -->
   <header class="nav" id="nav">
-    <a href="#inicio" class="nav__logo">Ca Na Margalida</a>
+    <a href="#inicio" class="nav__logo">
+      <span class="nav__monogram">CNM</span>
+      <span class="nav__wordmark">Ca Na Margalida</span>
+    </a>
     <nav class="nav__links" id="navLinks">
       <a href="#nosotros" data-hover>Nosotros</a>
       <a href="#carta" data-hover>Carta</a>
@@ -51,13 +56,12 @@
       <div class="hero__grain"></div>
     </div>
     <div class="hero__content">
-      <p class="hero__eyebrow">Restaurante · Felanitx · Mallorca</p>
+      <p class="hero__eyebrow">Restaurante familiar · Felanitx · Mallorca</p>
       <h1 class="hero__title">
-        <span class="line"><span>Cocina de</span></span>
-        <span class="line"><span>mercado con</span></span>
-        <span class="line"><span><em>alma mallorquina</em></span></span>
+        <span class="line"><span>Nuestra casa,</span></span>
+        <span class="line"><span><em>vuestra mesa.</em></span></span>
       </h1>
-      <p class="hero__sub">Tradición local, producto de temporada y técnica moderna en el corazón de Felanitx.</p>
+      <p class="hero__sub">Cocina de mercado, producto local e inspiración mallorquina para compartir momentos que saben a casa.</p>
       <div class="hero__actions">
         <a href="https://restaurante.covermanager.com/ca-na-margalida/" target="_blank" rel="noopener" class="btn" data-hover>Reservar mesa</a>
         <a href="#carta" class="btn btn--ghost" data-hover>Ver la carta</a>
@@ -67,6 +71,32 @@
       <button class="is-active"></button><button></button><button></button>
     </div>
     <div class="hero__scroll" aria-hidden="true"><span></span></div>
+  </section>
+
+  <!-- Banda de valores -->
+  <section class="values" aria-label="Nuestros valores">
+    <ul class="values__list">
+      <li class="values__item reveal" data-hover>
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 38C18 30 26 22 38 10M18 26c-4-1-7-4-7-9 5 0 8 3 9 7M26 18c-1-4 0-8 4-11 3 4 3 8 1 11M28 30c4 1 7 4 7 9-5 0-8-3-9-7" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+        <span>Cocina mallorquina</span>
+      </li>
+      <li class="values__item reveal" data-hover>
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 20h28l-3 18H13l-3-18ZM16 20c0-6 3.5-10 8-10s8 4 8 10M17 26v7M24 26v7M31 26v7" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Producto local</span>
+      </li>
+      <li class="values__item reveal" data-hover>
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 40V22L24 10l14 12v18M10 40h28M19 40V30c0-3 2-5 5-5s5 2 5 5v10" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Ambiente familiar</span>
+      </li>
+      <li class="values__item reveal" data-hover>
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 34h32M11 34c0-8 6-14 13-14s13 6 13 14M24 20v-3M22 15h4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Atención cercana</span>
+      </li>
+      <li class="values__item reveal" data-hover>
+        <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M16 8h16c0 10-3 16-8 16s-8-6-8-16ZM24 24v14M17 38h14M16.5 14h15" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Vinos de Mallorca</span>
+      </li>
+    </ul>
   </section>
 
   <!-- Cinta marquee -->
@@ -100,8 +130,8 @@
         <figure class="frame img-reveal">
           <img src="img/alcachofa.jpg" alt="Alcachofa confitada con jamón ibérico">
         </figure>
-        <figure class="frame frame--offset img-reveal">
-          <img src="img/marca.jpg" alt="Ilustración floral de Ca Na Margalida">
+        <figure class="frame frame--offset frame--logo img-reveal">
+          <img src="img/logo.png" alt="Logo de Restaurant Ca Na Margalida">
         </figure>
       </div>
     </div>
@@ -255,6 +285,7 @@
 
   <!-- Footer -->
   <footer class="footer">
+    <p class="footer__monogram reveal" aria-hidden="true">CNM</p>
     <p class="footer__name reveal">Ca Na Margalida</p>
     <div class="footer__links reveal">
       <a href="https://www.instagram.com/restaurantcanamargalida/" target="_blank" rel="noopener" data-hover>Instagram</a>

@@ -1,7 +1,13 @@
-// ============ Preloader ============
+// ============ Preloader: logo visible 2s como mínimo ============
+const PRELOADER_MIN = 2000;
+const preloaderStart = performance.now();
 const hidePreloader = () => document.getElementById("preloader").classList.add("is-done");
-window.addEventListener("load", hidePreloader);
-setTimeout(hidePreloader, 2600); // failsafe si algún recurso se atasca
+
+window.addEventListener("load", () => {
+  const restante = Math.max(0, PRELOADER_MIN - (performance.now() - preloaderStart));
+  setTimeout(hidePreloader, restante);
+});
+setTimeout(hidePreloader, 4200); // failsafe si algún recurso se atasca
 
 // ============ Barra de progreso ============
 const progress = document.getElementById("progress");
@@ -142,7 +148,7 @@ if (window.matchMedia("(pointer: fine)").matches) {
   };
   follow();
 
-  document.querySelectorAll("a, button, [data-lightbox]").forEach((el) => {
+  document.querySelectorAll("a, button, [data-lightbox], [data-hover]").forEach((el) => {
     el.addEventListener("mouseenter", () => cursor.classList.add("is-hover"));
     el.addEventListener("mouseleave", () => cursor.classList.remove("is-hover"));
   });
