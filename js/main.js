@@ -61,6 +61,22 @@ const startMoments = () => {
 momentDots.forEach((dot, i) => dot.addEventListener("click", () => { showMoment(i); startMoments(); }));
 startMoments();
 
+// ============ Botón Reservar del nav: ocultar si hay uno grande en pantalla ============
+const navReserve = document.getElementById("navReserve");
+const bigReserves = document.querySelectorAll(".js-reserve");
+
+if (navReserve && bigReserves.length) {
+  const visibleReserves = new Set();
+  const reserveObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) visibleReserves.add(entry.target);
+      else visibleReserves.delete(entry.target);
+    });
+    navReserve.classList.toggle("is-hidden", visibleReserves.size > 0);
+  }, { threshold: 0.35 });
+  bigReserves.forEach((btn) => reserveObserver.observe(btn));
+}
+
 // ============ Menú móvil ============
 const burger = document.getElementById("burger");
 const navLinks = document.getElementById("navLinks");
