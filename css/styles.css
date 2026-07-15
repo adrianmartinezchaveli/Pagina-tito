@@ -860,7 +860,9 @@ em { font-style: italic; color: var(--gold); }
   margin: 0 auto;
 }
 .contact__phone {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
   font-family: "Fraunces", serif;
   font-size: clamp(1.6rem, 3.6vw, 2.5rem);
   text-decoration: none;
@@ -869,8 +871,44 @@ em { font-style: italic; color: var(--gold); }
   border-bottom: 1px solid var(--line-light);
   transition: border-color 0.4s, color 0.4s, letter-spacing 0.4s;
 }
+.contact__phone svg {
+  width: clamp(26px, 3vw, 34px);
+  height: auto;
+  color: var(--gold);
+  transition: transform 0.5s var(--ease);
+}
 .contact__phone:hover { color: var(--gold-soft); border-color: var(--gold); letter-spacing: 0.02em; }
+.contact__phone:hover svg { transform: rotate(-12deg) scale(1.08); }
 .contact__info { display: grid; gap: 2.4rem; align-content: start; }
+.contact__block {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.2rem;
+  align-items: start;
+}
+.contact__icon {
+  display: grid;
+  place-items: center;
+  width: 54px; height: 54px;
+  margin-top: 0.2rem;
+  border: 1px solid rgba(189, 145, 80, 0.4);
+  border-radius: 50%;
+  color: var(--gold);
+  background: rgba(189, 145, 80, 0.06);
+  transition: transform 0.5s var(--ease), background 0.5s, border-color 0.5s;
+}
+.contact__block:hover .contact__icon {
+  transform: translateY(-4px);
+  background: rgba(189, 145, 80, 0.14);
+  border-color: var(--gold);
+}
+.contact__icon svg { width: 27px; height: 27px; }
+.contact__icon svg path {
+  stroke-dasharray: 220;
+  stroke-dashoffset: 220;
+  transition: stroke-dashoffset 1.8s var(--ease-out) calc(var(--d, 0s) + 0.2s);
+}
+.contact__block.is-visible .contact__icon svg path { stroke-dashoffset: 0; }
 .contact__block h3 {
   font-size: 0.74rem;
   font-family: "Inter", sans-serif;
@@ -983,7 +1021,8 @@ em { font-style: italic; color: var(--gold); }
   .reveal, .img-reveal img { opacity: 1; transform: none; filter: none; }
   .img-reveal::after { display: none; }
   .hero__title .line span { transform: none; }
-  .values__item svg path { stroke-dasharray: none; stroke-dashoffset: 0; }
+  .values__item svg path,
+  .contact__icon svg path { stroke-dasharray: none; stroke-dashoffset: 0; }
   html { scroll-behavior: auto; }
 }
 
