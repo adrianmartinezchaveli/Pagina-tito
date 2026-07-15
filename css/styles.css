@@ -51,32 +51,6 @@ em { font-style: italic; color: var(--gold); }
   z-index: 90;
 }
 
-/* ============ Cursor personalizado ============ */
-.cursor {
-  display: none;
-}
-@media (pointer: fine) {
-  .cursor {
-    display: block;
-    position: fixed;
-    top: 0; left: 0;
-    width: 36px; height: 36px;
-    border: 1px solid var(--gold);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 95;
-    transform: translate(-50%, -50%);
-    transition: width 0.3s var(--ease), height 0.3s var(--ease),
-                background 0.3s, opacity 0.3s;
-    opacity: 0;
-  }
-  body:hover .cursor { opacity: 0.9; }
-  .cursor.is-hover {
-    width: 64px; height: 64px;
-    background: rgba(185, 138, 74, 0.12);
-  }
-}
-
 /* ============ Preloader (logo, 2s) ============ */
 .preloader {
   position: fixed;

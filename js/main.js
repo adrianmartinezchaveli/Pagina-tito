@@ -155,24 +155,3 @@ const closeLightbox = () => {
 document.getElementById("lightboxClose").addEventListener("click", closeLightbox);
 lightbox.addEventListener("click", (e) => { if (e.target === lightbox) closeLightbox(); });
 document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeLightbox(); });
-
-// ============ Cursor personalizado ============
-const cursor = document.getElementById("cursor");
-if (window.matchMedia("(pointer: fine)").matches) {
-  let cx = 0, cy = 0, tx = 0, ty = 0;
-
-  window.addEventListener("mousemove", (e) => { tx = e.clientX; ty = e.clientY; });
-
-  const follow = () => {
-    cx += (tx - cx) * 0.16;
-    cy += (ty - cy) * 0.16;
-    cursor.style.transform = `translate(${cx}px, ${cy}px) translate(-50%, -50%)`;
-    requestAnimationFrame(follow);
-  };
-  follow();
-
-  document.querySelectorAll("a, button, [data-lightbox], [data-hover]").forEach((el) => {
-    el.addEventListener("mouseenter", () => cursor.classList.add("is-hover"));
-    el.addEventListener("mouseleave", () => cursor.classList.remove("is-hover"));
-  });
-}
