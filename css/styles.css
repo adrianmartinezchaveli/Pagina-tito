@@ -51,6 +51,32 @@ em { font-style: italic; color: var(--gold); }
   z-index: 90;
 }
 
+/* ============ Cursor personalizado ============ */
+.cursor {
+  display: none;
+}
+@media (pointer: fine) {
+  .cursor {
+    display: block;
+    position: fixed;
+    top: 0; left: 0;
+    width: 36px; height: 36px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 95;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s var(--ease), height 0.3s var(--ease),
+                background 0.3s, opacity 0.3s;
+    opacity: 0;
+  }
+  body:hover .cursor { opacity: 0.9; }
+  .cursor.is-hover {
+    width: 64px; height: 64px;
+    background: rgba(185, 138, 74, 0.12);
+  }
+}
+
 /* ============ Preloader (logo, 2s) ============ */
 .preloader {
   position: fixed;
@@ -121,13 +147,14 @@ em { font-style: italic; color: var(--gold); }
   padding: 1.1rem clamp(1.2rem, 4vw, 3rem);
   transition: background 0.4s, box-shadow 0.4s, transform 0.45s var(--ease), color 0.4s, padding 0.4s;
   color: var(--cream);
+  background: linear-gradient(180deg, rgba(18, 14, 10, 0.72), rgba(18, 14, 10, 0));
 }
 .nav.is-scrolled {
-  background: rgba(246, 241, 232, 0.86);
-  backdrop-filter: blur(14px) saturate(1.4);
-  -webkit-backdrop-filter: blur(14px) saturate(1.4);
-  box-shadow: 0 1px 0 var(--line);
-  color: var(--ink);
+  background: rgba(18, 14, 10, 0.94);
+  backdrop-filter: blur(14px) saturate(1.2);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  box-shadow: 0 1px 0 rgba(189, 145, 80, 0.28);
+  color: var(--cream);
   padding-block: 0.8rem;
 }
 .nav.is-hidden { transform: translateY(-100%); }
@@ -147,15 +174,7 @@ em { font-style: italic; color: var(--gold); }
   pointer-events: auto;
 }
 @media (min-width: 821px) {
-  .nav__reserve {
-    transition: transform 0.4s var(--ease), color 0.4s, border-color 0.4s,
-                box-shadow 0.4s, opacity 0.45s, visibility 0.45s;
-  }
-  .nav__reserve.is-hidden {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-  }
+  .nav__reserve.is-hidden { display: none; }
 }
 .nav__monogram {
   font-family: "Fraunces", Georgia, serif;
@@ -164,7 +183,7 @@ em { font-style: italic; color: var(--gold); }
   color: var(--gold-soft);
   transition: color 0.4s;
 }
-.nav.is-scrolled .nav__monogram { color: var(--gold); }
+.nav.is-scrolled .nav__monogram { color: var(--gold-soft); }
 .nav__wordmark {
   font-size: 0.56rem;
   letter-spacing: 0.32em;
@@ -284,7 +303,7 @@ em { font-style: italic; color: var(--gold); }
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  animation: preloaderUp 1s 2.25s var(--ease-out) both, shine 7s 3.3s linear infinite;
+  animation: preloaderUp 1s 2.2s var(--ease-out) both, shine 7s 3.3s linear infinite;
 }
 .hero__brand {
   margin-top: 0.8rem;
@@ -292,7 +311,7 @@ em { font-style: italic; color: var(--gold); }
   letter-spacing: 0.5em;
   text-transform: uppercase;
   color: var(--gold-soft);
-  animation: preloaderUp 1s 2.4s var(--ease-out) both;
+  animation: preloaderUp 1s 2.3s var(--ease-out) both;
 }
 .hero__divider {
   display: flex;
@@ -302,7 +321,7 @@ em { font-style: italic; color: var(--gold); }
   color: var(--gold);
   font-size: 0.5rem;
   font-style: normal;
-  animation: preloaderUp 1s 2.5s var(--ease-out) both;
+  animation: preloaderUp 1s 2.35s var(--ease-out) both;
 }
 .hero__divider i {
   display: block;
@@ -319,13 +338,13 @@ em { font-style: italic; color: var(--gold); }
   letter-spacing: 0.32em;
   text-transform: uppercase;
   color: rgba(242, 235, 221, 0.55);
-  animation: preloaderUp 1s 3.3s var(--ease-out) both;
+  animation: preloaderUp 1s 2.9s var(--ease-out) both;
 }
 .hero__where span { color: var(--gold); font-size: 0.5rem; vertical-align: 2px; }
 .hero__media {
   position: absolute;
   top: 0; right: 0; bottom: 0;
-  width: 72%;
+  width: 52%;
   z-index: 1;
 }
 .hero__media img {
@@ -333,12 +352,6 @@ em { font-style: italic; color: var(--gold); }
   inset: 0;
   width: 100%; height: 100%;
   object-fit: cover;
-  object-position: 62% 50%;
-  animation: heroZoom 3.4s 2.1s var(--ease-out) both;
-}
-@keyframes heroZoom {
-  from { transform: scale(1.07); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
 }
 .hero__media-veil {
   position: absolute;
@@ -346,12 +359,12 @@ em { font-style: italic; color: var(--gold); }
   background:
     linear-gradient(90deg,
       #14100c 0%,
-      rgba(20, 16, 12, 0.96) 14%,
-      rgba(20, 16, 12, 0.82) 28%,
-      rgba(20, 16, 12, 0.45) 46%,
-      rgba(20, 16, 12, 0.12) 66%,
-      rgba(20, 16, 12, 0.3) 100%),
-    linear-gradient(180deg, rgba(20, 16, 12, 0.5), transparent 32%, transparent 68%, rgba(20, 16, 12, 0.55));
+      rgba(20, 16, 12, 0.9) 7%,
+      rgba(20, 16, 12, 0.5) 18%,
+      rgba(20, 16, 12, 0.12) 34%,
+      rgba(20, 16, 12, 0) 48%,
+      rgba(20, 16, 12, 0.28) 100%),
+    linear-gradient(180deg, rgba(20, 16, 12, 0.55), transparent 30%, transparent 66%, rgba(20, 16, 12, 0.55));
 }
 .hero__grain {
   position: absolute; inset: -50%;
@@ -374,7 +387,7 @@ em { font-style: italic; color: var(--gold); }
   text-transform: uppercase;
   color: var(--gold-soft);
   margin-bottom: 1.5rem;
-  animation: preloaderUp 1s 2.6s var(--ease-out) both;
+  animation: preloaderUp 1s 2.4s var(--ease-out) both;
 }
 .hero__title {
   font-size: clamp(2.4rem, 5vw, 4.2rem);
@@ -386,22 +399,22 @@ em { font-style: italic; color: var(--gold); }
   display: block;
   transform: translateY(112%);
   animation: lineUp 1.1s var(--ease-out) forwards;
-  animation-delay: 2.7s;
+  animation-delay: 2.5s;
 }
-.hero__title .line:nth-child(2) span { animation-delay: 2.85s; }
+.hero__title .line:nth-child(2) span { animation-delay: 2.6s; }
 @keyframes lineUp { to { transform: translateY(0); } }
 .hero__sub {
   max-width: 29rem;
   font-size: clamp(1rem, 1.5vw, 1.1rem);
   margin-bottom: 2rem;
   opacity: 0.92;
-  animation: preloaderUp 1s 3s var(--ease-out) both;
+  animation: preloaderUp 1s 2.7s var(--ease-out) both;
 }
 .hero__actions {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  animation: preloaderUp 1s 3.15s var(--ease-out) both;
+  animation: preloaderUp 1s 2.8s var(--ease-out) both;
 }
 .hero__scroll {
   position: absolute;
