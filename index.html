@@ -46,17 +46,13 @@
     </button>
   </header>
 
-  <!-- Hero con pase de fotos -->
+  <!-- Hero editorial: panel oscuro + foto fija -->
   <section class="hero" id="inicio">
-    <div class="hero__media" id="heroMedia">
-      <img src="img/carrillera.jpg" alt="Carrillera melosa sobre puré" class="hero__img is-active">
-      <img src="img/cochinillo.jpg" alt="Cochinillo asado crujiente" class="hero__img">
-      <img src="img/alcachofa.jpg" alt="Alcachofa confitada con jamón ibérico" class="hero__img">
-      <div class="hero__overlay"></div>
-      <div class="hero__grain"></div>
-    </div>
-    <div class="hero__content">
-      <p class="hero__eyebrow">Restaurante familiar · Felanitx · Mallorca</p>
+    <div class="hero__panel">
+      <p class="hero__eyebrow">Restaurante familiar</p>
+      <p class="hero__monogram" aria-hidden="true">CNM</p>
+      <p class="hero__brand">Ca Na Margalida</p>
+      <span class="hero__divider" aria-hidden="true"></span>
       <h1 class="hero__title">
         <span class="line"><span>Nuestra casa,</span></span>
         <span class="line"><span><em>vuestra mesa.</em></span></span>
@@ -66,10 +62,13 @@
         <a href="https://restaurante.covermanager.com/ca-na-margalida/" target="_blank" rel="noopener" class="btn" data-hover>Reservar mesa</a>
         <a href="#carta" class="btn btn--ghost" data-hover>Ver la carta</a>
       </div>
+      <p class="hero__where"><span aria-hidden="true">◆</span> Felanitx · Mallorca</p>
     </div>
-    <div class="hero__dots" id="heroDots" aria-hidden="true">
-      <button class="is-active"></button><button></button><button></button>
+    <div class="hero__media">
+      <img src="img/carrillera.jpg" alt="Carrillera melosa sobre puré de Ca Na Margalida">
+      <div class="hero__media-veil" aria-hidden="true"></div>
     </div>
+    <div class="hero__grain" aria-hidden="true"></div>
     <div class="hero__scroll" aria-hidden="true"><span></span></div>
   </section>
 
@@ -219,6 +218,23 @@
           <a href="https://restaurante.covermanager.com/ca-na-margalida/" target="_blank" rel="noopener" class="btn btn--light" data-hover>Reservar</a>
           <a href="docs/carta.pdf" target="_blank" rel="noopener" class="btn btn--ghost-light" data-hover>Carta completa (PDF)</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Momentos: pase de fotos -->
+  <section class="moments section--dark" aria-label="Platos de la casa">
+    <div class="moments__inner">
+      <p class="section__eyebrow reveal">De la cocina</p>
+      <div class="moments__frame reveal" id="momentsFrame">
+        <img src="img/carrillera.jpg" alt="Carrillera melosa con boniato y patata" class="moments__img is-active">
+        <img src="img/cochinillo.jpg" alt="Cochinillo asado crujiente" class="moments__img">
+        <img src="img/alcachofa.jpg" alt="Alcachofa confitada con jamón ibérico" class="moments__img">
+        <div class="moments__overlay" aria-hidden="true"></div>
+        <p class="moments__caption" id="momentsCaption">Carrillera melosa</p>
+      </div>
+      <div class="moments__dots" id="momentsDots" aria-hidden="true">
+        <button class="is-active"></button><button></button><button></button>
       </div>
     </div>
   </section>

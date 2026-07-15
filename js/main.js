@@ -14,6 +14,7 @@ const progress = document.getElementById("progress");
 
 // ============ Nav: fondo al hacer scroll + ocultar al bajar ============
 const nav = document.getElementById("nav");
+const heroPhoto = document.querySelector(".hero__media img");
 let lastScroll = 0;
 
 window.addEventListener("scroll", () => {
@@ -27,32 +28,38 @@ window.addEventListener("scroll", () => {
   }
   lastScroll = y;
 
-  // Parallax del hero
-  const active = document.querySelector(".hero__img.is-active");
-  if (active && y < window.innerHeight) {
-    active.style.translate = `0 ${y * 0.22}px`;
+  // Parallax suave de la foto del hero
+  if (heroPhoto && y < window.innerHeight) {
+    heroPhoto.style.translate = `0 ${y * 0.12}px`;
   }
 }, { passive: true });
 
-// ============ Pase de fotos del hero ============
-const heroImgs = [...document.querySelectorAll(".hero__img")];
-const heroDots = [...document.querySelectorAll(".hero__dots button")];
-let heroIndex = 0;
-let heroTimer;
+// ============ Pase de fotos "De la cocina" ============
+const momentImgs = [...document.querySelectorAll(".moments__img")];
+const momentDots = [...document.querySelectorAll("#momentsDots button")];
+const momentCaption = document.getElementById("momentsCaption");
+const momentNames = ["Carrillera melosa", "Cochinillo asado", "Alcachofa confitada"];
+let momentIndex = 0;
+let momentTimer;
 
-const showSlide = (i) => {
-  heroIndex = i % heroImgs.length;
-  heroImgs.forEach((img, k) => img.classList.toggle("is-active", k === heroIndex));
-  heroDots.forEach((dot, k) => dot.classList.toggle("is-active", k === heroIndex));
+const showMoment = (i) => {
+  momentIndex = i % momentImgs.length;
+  momentImgs.forEach((img, k) => img.classList.toggle("is-active", k === momentIndex));
+  momentDots.forEach((dot, k) => dot.classList.toggle("is-active", k === momentIndex));
+  momentCaption.classList.add("is-out");
+  setTimeout(() => {
+    momentCaption.textContent = momentNames[momentIndex];
+    momentCaption.classList.remove("is-out");
+  }, 350);
 };
 
-const startHero = () => {
-  clearInterval(heroTimer);
-  heroTimer = setInterval(() => showSlide(heroIndex + 1), 5200);
+const startMoments = () => {
+  clearInterval(momentTimer);
+  momentTimer = setInterval(() => showMoment(momentIndex + 1), 5200);
 };
 
-heroDots.forEach((dot, i) => dot.addEventListener("click", () => { showSlide(i); startHero(); }));
-startHero();
+momentDots.forEach((dot, i) => dot.addEventListener("click", () => { showMoment(i); startMoments(); }));
+startMoments();
 
 // ============ Menú móvil ============
 const burger = document.getElementById("burger");
