@@ -634,6 +634,12 @@ em { font-style: italic; color: var(--gold); }
   max-width: 72rem;
   margin: 3.5rem auto 0;
 }
+.menu__col--postres {
+  grid-column: 1 / -1;
+  width: 100%;
+  max-width: 38rem;
+  margin: 0 auto;
+}
 .menu__cat {
   font-size: clamp(1.4rem, 2.6vw, 1.8rem);
   font-style: italic;
