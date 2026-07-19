@@ -38,7 +38,7 @@ window.addEventListener("scroll", () => {
 const momentImgs = [...document.querySelectorAll(".moments__img")];
 const momentDots = [...document.querySelectorAll("#momentsDots button")];
 const momentCaption = document.getElementById("momentsCaption");
-const momentNames = ["Carrillera melosa", "Cochinillo asado", "Alcachofa confitada"];
+const momentNames = momentImgs.map((img) => img.dataset.caption || img.alt);
 let momentIndex = 0;
 let momentTimer;
 
@@ -60,6 +60,21 @@ const startMoments = () => {
 
 momentDots.forEach((dot, i) => dot.addEventListener("click", () => { showMoment(i); startMoments(); }));
 startMoments();
+
+// ============ Carta: desplegar foto del plato ============
+document.querySelectorAll(".menu__item--photo").forEach((item) => {
+  const row = item.querySelector("button.menu__row");
+  row.addEventListener("click", () => {
+    const abrir = !item.classList.contains("is-open");
+    // acordeón: solo un plato abierto a la vez
+    document.querySelectorAll(".menu__item--photo.is-open").forEach((otro) => {
+      otro.classList.remove("is-open");
+      otro.querySelector("button.menu__row").setAttribute("aria-expanded", "false");
+    });
+    item.classList.toggle("is-open", abrir);
+    row.setAttribute("aria-expanded", String(abrir));
+  });
+});
 
 // ============ Botón Reservar del nav: ocultar si hay uno grande en pantalla ============
 const navReserve = document.getElementById("navReserve");
