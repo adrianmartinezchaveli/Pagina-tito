@@ -1123,12 +1123,16 @@ button.menu__row:hover .menu__thumb img { transform: scale(1.12); }
   .nav.menu-open .nav__burger span:last-child { transform: translateY(-4px) rotate(-45deg); }
 
   .hero { flex-direction: column; }
-  .hero__panel { min-height: 72svh; width: 100%; padding-top: 6.5rem; }
-  .hero__media { position: relative; width: 100%; min-height: 44svh; }
-  .hero__media img { object-position: 50% 50%; }
-  .hero__media-veil {
-    background: linear-gradient(180deg, #14100c 0%, rgba(20, 16, 12, 0.25) 30%, rgba(20, 16, 12, 0.12) 60%, rgba(20, 16, 12, 0.5) 100%);
+  /* Móvil: foto de fondo tras el panel y sin foto inferior */
+  .hero__panel {
+    min-height: 100svh;
+    width: 100%;
+    padding-top: 6.5rem;
+    background:
+      linear-gradient(180deg, rgba(20, 16, 12, 0.92) 0%, rgba(20, 16, 12, 0.78) 45%, rgba(20, 16, 12, 0.9) 100%),
+      url("../img/carta/frito-marisco.webp") center 40% / cover no-repeat;
   }
+  .hero__media { display: none; }
   .hero__scroll { display: none; }
 
   .about__grid, .contact__grid { grid-template-columns: 1fr; }
